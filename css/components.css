@@ -735,7 +735,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 14px;
+  padding: 0 16px 14px;
+  background-color: #FAF4F2;
+  border-bottom: 1px solid #EEDDD7;
   width: 100%;
 }
 
@@ -755,6 +757,7 @@
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(250, 114, 104, 0.12);
   transition: all var(--transition-fast);
+  width: 100%;
 }
 
 .case-card-toggle-btn:hover {
@@ -766,6 +769,21 @@
 
 .case-card-toggle-btn:active {
   transform: scale(0.97);
+}
+
+.case-card-toggle-btn .case-toggle-count {
+  background-color: rgba(250, 114, 104, 0.15);
+  color: var(--coral-600);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.case-card-toggle-btn:hover .case-toggle-count {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
 }
 
 /* --------------------------------------------------------------------------
