@@ -1,0 +1,872 @@
+/* ==========================================================================
+   BLOSSOM DENTAL & IMPLANT STUDIO - COMPONENTS STYLES
+   Buttons, Badges, Appointment Card, Tabs, Testimonials, Modal
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BUTTONS (Min 48px touch targets, Strict Serif)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-serif-body);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Primary Coral Button (from Reference Image) */
+.btn-coral {
+  background-color: var(--coral-500);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(250, 114, 104, 0.35);
+}
+
+.btn-coral:hover {
+  background-color: var(--coral-600);
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 20px rgba(250, 114, 104, 0.48);
+  transform: translateY(-2px);
+}
+
+/* Secondary Outline Coral Button */
+.btn-outline-coral {
+  background-color: transparent;
+  border-color: var(--coral-500);
+  color: var(--coral-500) !important;
+}
+
+.btn-outline-coral:hover {
+  background-color: var(--coral-50);
+  border-color: var(--coral-600);
+  color: var(--coral-600) !important;
+  transform: translateY(-2px);
+}
+
+/* Dark Plum Button */
+.btn-plum {
+  background-color: var(--plum-800);
+  color: #FFFFFF !important;
+  box-shadow: var(--shadow-plum);
+}
+
+.btn-plum:hover {
+  background-color: var(--plum-900);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
+
+/* Outline Plum Button */
+.btn-outline-plum {
+  background-color: transparent;
+  border-color: var(--plum-800);
+  color: var(--plum-800) !important;
+}
+
+.btn-outline-plum:hover {
+  background-color: var(--plum-50);
+  color: var(--plum-900) !important;
+}
+
+/* Small Button */
+.btn-sm {
+  min-height: 38px;
+  padding: 8px 18px;
+  font-size: var(--fs-sm);
+}
+
+/* Full Width Button */
+.btn-block {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   2. BADGES & FEATURE PILLS
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge-coral {
+  background-color: var(--coral-100);
+  color: var(--coral-600);
+  border: 1px solid var(--coral-200);
+}
+
+.badge-plum {
+  background-color: var(--plum-100);
+  color: var(--plum-800);
+}
+
+.badge-success {
+  background-color: var(--success-bg);
+  color: var(--success-green);
+}
+
+/* Feature Pill in Hero (3 pills at bottom of hero text) */
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-feature-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background-color: var(--coral-100);
+  color: var(--coral-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-feature-text h4 {
+  font-size: var(--fs-sm);
+  color: var(--text-heading-dark);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-feature-text p {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+/* --------------------------------------------------------------------------
+   3. HERO APPOINTMENT CARD (Direct match to Reference Image)
+   -------------------------------------------------------------------------- */
+.hero-booking-card {
+  background-color: var(--plum-800);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-booking-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(250, 114, 104, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.booking-card-header {
+  margin-bottom: var(--space-6);
+}
+
+.booking-card-header h3 {
+  color: #FFFFFF;
+  font-size: var(--fs-xl);
+  margin-bottom: 4px;
+}
+
+.booking-card-header p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: var(--fs-sm);
+  margin-bottom: 0;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  min-height: 48px;
+  background-color: #FFFFFF;
+  color: var(--text-heading-dark);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px 12px 46px;
+  font-family: var(--font-serif-body);
+  font-size: var(--fs-base);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  border-color: var(--coral-500);
+  box-shadow: 0 0 0 3px rgba(250, 114, 104, 0.35);
+}
+
+.booking-card-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.70);
+  margin-top: var(--space-2);
+}
+
+.booking-card-security svg {
+  color: var(--coral-400);
+}
+
+/* --------------------------------------------------------------------------
+   4. GOAL NAVIGATOR TABS (I'm looking for help with...)
+   -------------------------------------------------------------------------- */
+.goal-nav-wrapper {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+  box-shadow: var(--shadow-md);
+}
+
+.goal-tabs-list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: var(--space-8);
+  scrollbar-width: none;
+}
+
+.goal-tabs-list::-webkit-scrollbar {
+  display: none;
+}
+
+.goal-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+  background-color: #FFFFFF;
+  color: var(--text-body);
+  font-family: var(--font-serif-body);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.goal-tab-btn .tab-icon {
+  color: var(--coral-500);
+  transition: color var(--transition-fast);
+}
+
+.goal-tab-btn:hover {
+  border-color: var(--coral-400);
+  background-color: var(--coral-50);
+  color: var(--coral-600);
+}
+
+/* Active tab style directly matching reference image */
+.goal-tab-btn.active {
+  background-color: var(--coral-500);
+  border-color: var(--coral-500);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(250, 114, 104, 0.35);
+}
+
+.goal-tab-btn.active .tab-icon {
+  color: #FFFFFF;
+}
+
+/* Goal Content Pane (3-column layout matching reference) */
+.goal-pane-card {
+  display: none;
+  grid-template-columns: 260px 1fr 280px;
+  gap: var(--space-8);
+  align-items: center;
+  background-color: var(--bg-blush-light);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  border: 1px solid var(--border-subtle);
+  animation: fadeIn 0.4s var(--ease-smooth);
+}
+
+.goal-pane-card.active {
+  display: grid;
+}
+
+.goal-pane-art {
+  text-align: center;
+}
+
+.goal-pane-art img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  max-height: 220px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.goal-pane-content h3 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-2);
+  color: var(--text-heading-dark);
+}
+
+.goal-pane-content p {
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-4);
+}
+
+.goal-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2) var(--space-4);
+}
+
+.goal-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-sm);
+  color: var(--text-body);
+  font-weight: 500;
+}
+
+.goal-checklist svg {
+  color: var(--coral-500);
+  flex-shrink: 0;
+}
+
+/* Right side action card in Goal Pane */
+.goal-pane-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.quick-assessment-box {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  border: 1px solid var(--border-subtle);
+}
+
+.quick-assessment-box h4 {
+  font-size: var(--fs-sm);
+  color: var(--text-heading-dark);
+  margin-bottom: 4px;
+}
+
+.quick-assessment-box p {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.quick-assessment-box a {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--coral-500);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   5. DOCTOR SPOTLIGHT & TESTIMONIAL SPLIT SECTION (Direct match to reference)
+   -------------------------------------------------------------------------- */
+.spotlight-split-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--space-8);
+  align-items: stretch;
+}
+
+/* Left Dark Plum Doctor Card */
+.doctor-spotlight-card {
+  background-color: var(--plum-800);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  color: #FFFFFF;
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-spotlight-photo {
+  width: 170px;
+  height: 220px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.doctor-spotlight-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-spotlight-info h3 {
+  color: #FFFFFF;
+  font-size: var(--fs-xl);
+  margin-bottom: 4px;
+}
+
+.doctor-spotlight-info .doctor-degree {
+  color: var(--coral-300);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.doctor-spotlight-info .doctor-role {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.doctor-spotlight-info p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--space-5);
+  line-height: var(--lh-snug);
+}
+
+/* Right Warm Cream Testimonial Card */
+.testimonial-spotlight-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 3.5vw, 3rem);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.quote-decor {
+  font-family: var(--font-serif-display);
+  font-size: 5rem;
+  line-height: 0.5;
+  color: rgba(250, 114, 104, 0.35);
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.testimonial-text {
+  font-size: var(--fs-md);
+  font-style: italic;
+  color: var(--text-heading-dark);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-5);
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  color: var(--coral-500);
+  margin-bottom: var(--space-2);
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: var(--text-heading-dark);
+  font-size: var(--fs-base);
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--space-4);
+}
+
+.testimonial-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border-subtle);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.testimonial-dot.active {
+  background-color: var(--coral-500);
+  width: 22px;
+  border-radius: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   6. 4-FEATURE HIGHLIGHTS BAR (From Reference Image)
+   -------------------------------------------------------------------------- */
+.highlights-four-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  background-color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-subtle);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  box-shadow: var(--shadow-sm);
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.highlight-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--coral-50);
+  color: var(--coral-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlight-content h4 {
+  font-size: var(--fs-base);
+  margin-bottom: 2px;
+  color: var(--text-heading-dark);
+}
+
+.highlight-content p {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. MODAL & APPOINTMENT DIALOG
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(29, 13, 31, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.appointment-modal {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 540px;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  transform: translateY(20px);
+  transition: transform var(--transition-normal);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-backdrop.is-open .appointment-modal {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-blush);
+  color: var(--text-heading-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--coral-100);
+  color: var(--coral-600);
+}
+
+/* --------------------------------------------------------------------------
+   8. FLOATING ACTION BUTTONS (CALL & WHATSAPP - LOWER RIGHT CORNER)
+   -------------------------------------------------------------------------- */
+.floating-fab-group {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: var(--z-sticky-bar, 999);
+}
+
+.fab-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF !important;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.fab-btn:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.fab-btn:active {
+  transform: scale(0.94);
+}
+
+.fab-whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.42);
+}
+
+.fab-call {
+  background: linear-gradient(135deg, #FA7268, #E25B51);
+  box-shadow: 0 6px 18px rgba(250, 114, 104, 0.45);
+}
+
+.fab-tooltip {
+  position: absolute;
+  right: 62px;
+  background-color: var(--plum-900, #271329);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.fab-btn:hover .fab-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   9. CASE STUDY TOGGLE BUTTON (BELOW COMPARISON CARD)
+   -------------------------------------------------------------------------- */
+.case-card-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.case-card-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 1.5px solid var(--coral-500);
+  color: var(--coral-600);
+  font-family: var(--font-serif-body);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(250, 114, 104, 0.12);
+  transition: all var(--transition-fast);
+}
+
+.case-card-toggle-btn:hover {
+  background: var(--coral-500);
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(250, 114, 104, 0.3);
+  transform: translateY(-1px);
+}
+
+.case-card-toggle-btn:active {
+  transform: scale(0.97);
+}
+
+/* --------------------------------------------------------------------------
+   10. IN-PAGE BLOG READING MODAL (Safe Instant Reading)
+   -------------------------------------------------------------------------- */
+.blog-reader-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(39, 19, 41, 0.82);
+  backdrop-filter: blur(6px);
+  overflow-y: auto;
+  padding: 20px 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-reader-modal.active {
+  display: flex;
+}
+
+.blog-reader-content {
+  background: #FFFFFF;
+  border-radius: 20px;
+  max-width: 660px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--neutral-200);
+  animation: modalScaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.blog-reader-header {
+  padding: 24px 28px 16px;
+  border-bottom: 1px solid var(--neutral-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.blog-reader-body {
+  padding: 22px 28px;
+  color: var(--plum-800);
+  font-size: var(--fs-base);
+  line-height: 1.7;
+}
+
+.blog-reader-footer {
+  padding: 16px 28px 20px;
+  border-top: 1px solid var(--neutral-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: var(--plum-50);
+  border-radius: 0 0 20px 20px;
+}
+
+/* Responsive Component Adjustments */
+@media (max-width: 992px) {
+  .spotlight-split-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .goal-pane-card {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights-four-bar {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .highlights-four-bar {
+    grid-template-columns: 1fr;
+  }
+  
+  .doctor-spotlight-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-spotlight-photo {
+    width: 140px;
+    height: 180px;
+  }
+
+  .floating-fab-group {
+    bottom: 18px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .fab-btn {
+    width: 48px;
+    height: 48px;
+  }
+}

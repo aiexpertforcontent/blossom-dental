@@ -1,0 +1,276 @@
+﻿/* ==========================================================================
+   BLOSSOM DENTAL - CLINICAL TREATMENT GUIDELINES STYLESHEET
+   Medical dental protocols, step-by-step endodontic guides & patient care instructions
+   ========================================================================== */
+
+.guideline-hero {
+  background: linear-gradient(135deg, var(--plum-950) 0%, var(--plum-850) 100%);
+  color: #FFFFFF;
+  padding: calc(var(--space-10) + 40px) 0 var(--space-8);
+  position: relative;
+  overflow: hidden;
+}
+
+.guideline-hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(250, 114, 104, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.guideline-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-4);
+}
+
+.guideline-breadcrumbs a {
+  color: var(--coral-300);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.guideline-breadcrumbs a:hover {
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+
+.guideline-hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.guideline-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(250, 114, 104, 0.35);
+  border-radius: var(--radius-full);
+  padding: 6px 16px;
+  margin-bottom: var(--space-3);
+}
+
+.guideline-hero-badge span.cursive {
+  font-family: var(--font-cursive-accent);
+  font-size: 1.15rem;
+  color: var(--coral-300);
+}
+
+.guideline-hero h1 {
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: var(--space-3);
+}
+
+.guideline-hero p.lead {
+  font-size: var(--fs-base);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-5);
+}
+
+.guideline-hero-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.guideline-hero-card img {
+  max-width: 220px;
+  margin: 0 auto var(--space-3);
+  display: block;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.35));
+}
+
+/* Clinical Protocol Stepper */
+.protocol-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.protocol-step-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: var(--space-4);
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.protocol-step-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--coral-300);
+  transform: translateY(-2px);
+}
+
+.protocol-step-number {
+  width: 54px;
+  height: 54px;
+  background: var(--plum-800);
+  color: var(--coral-400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif-display);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.protocol-step-content h4 {
+  font-size: var(--fs-lg);
+  color: var(--text-heading-dark);
+  margin-bottom: 4px;
+}
+
+.protocol-step-content p {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: var(--lh-normal);
+  margin-bottom: 8px;
+}
+
+.protocol-step-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: var(--fs-xs);
+  color: var(--plum-700);
+}
+
+.protocol-step-tag {
+  background: var(--plum-50);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+/* Pre / Post Op Cards */
+.guideline-split-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.guideline-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.guideline-box-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.guideline-box-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--plum-50);
+  color: var(--coral-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.guideline-box h3 {
+  font-size: var(--fs-xl);
+  color: var(--text-heading-dark);
+  margin: 0;
+}
+
+.guideline-instruction-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.guideline-instruction-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--fs-sm);
+  color: var(--text-body);
+  line-height: var(--lh-normal);
+}
+
+.guideline-instruction-list li svg {
+  flex-shrink: 0;
+  color: var(--coral-500);
+  margin-top: 3px;
+}
+
+/* Clinical Alert / Warning Box */
+.clinical-alert-box {
+  background: #FFF7F6;
+  border-left: 4px solid var(--coral-500);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-6) 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.clinical-alert-box svg {
+  color: var(--coral-500);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.clinical-alert-box h4 {
+  font-size: var(--fs-base);
+  color: var(--plum-900);
+  margin-bottom: 4px;
+}
+
+.clinical-alert-box p {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin: 0;
+  line-height: var(--lh-normal);
+}
+
+@media (max-width: 991px) {
+  .guideline-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .protocol-step-item {
+    grid-template-columns: 1fr;
+  }
+}

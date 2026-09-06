@@ -1,0 +1,306 @@
+/* ==========================================================================
+   BLOSSOM DENTAL & IMPLANT STUDIO - ANIMATIONS
+   Animated Cursive Handwriting, Interactive Slide Transitions, Smooth Reveals
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ANIMATED CURSIVE HANDWRITING (Welcome to Blossom Dental Studio)
+   -------------------------------------------------------------------------- */
+.cursive-welcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 18px;
+  background: linear-gradient(135deg, rgba(250, 114, 104, 0.12) 0%, rgba(56, 31, 56, 0.06) 100%);
+  border: 1px solid rgba(250, 114, 104, 0.25);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(250, 114, 104, 0.10);
+}
+
+.cursive-welcome-badge::after {
+  content: ";
+ position: absolute;
+ top: 0;
+ left: -100%;
+ width: 60%;
+ height: 100%;
+ background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+ animation: shineShimmer 4s infinite 1.5s;
+}
+
+.cursive-welcome-text {
+ font-family: var(--font-cursive-welcome);
+ font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.75rem);
+ font-weight: 700;
+ color: var(--coral-500);
+ letter-spacing: 0.02em;
+ display: inline-block;
+ position: relative;
+ background: linear-gradient(90deg, var(--coral-600), var(--coral-500), var(--plum-700));
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ animation: cursiveSlideIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.cursive-sparkle {
+ display: inline-block;
+ font-size: 1.1rem;
+ animation: sparkleTwinkle 2.5s infinite ease-in-out;
+}
+
+@keyframes cursiveSlideIn {
+ 0% {
+ opacity: 0;
+ transform: translateX(-35px) scale(0.92);
+ filter: blur(4px);
+ }
+ 60% {
+ opacity: 1;
+ transform: translateX(4px) scale(1.02);
+ filter: blur(0);
+ }
+ 100% {
+ opacity: 1;
+ transform: translateX(0) scale(1);
+ filter: blur(0);
+ }
+}
+
+@keyframes shineShimmer {
+ 0% {
+ left: -100%;
+ }
+ 30%, 100% {
+ left: 140%;
+ }
+}
+
+@keyframes sparkleTwinkle {
+ 0%, 100% {
+ transform: scale(0.9) rotate(0deg);
+ opacity: 0.7;
+ }
+ 50% {
+ transform: scale(1.25) rotate(18deg);
+ opacity: 1;
+ filter: drop-shadow(0 0 6px rgba(250, 114, 104, 0.8));
+ }
+}
+
+/* --------------------------------------------------------------------------
+ 2. SLIDE ANIMATIONS & INTERSECTION OBSERVER REVEALS
+ -------------------------------------------------------------------------- */
+.animate-on-scroll {
+ opacity: 0;
+ transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+ will-change: opacity, transform;
+}
+
+.slide-up {
+ transform: translateY(32px);
+}
+
+.slide-left {
+ transform: translateX(-36px);
+}
+
+.slide-right {
+ transform: translateX(36px);
+}
+
+.zoom-in {
+ transform: scale(0.94);
+}
+
+/* Revealed state triggered by JS IntersectionObserver */
+.is-visible {
+ opacity: 1 !important;
+ transform: translate(0, 0) scale(1) !important;
+}
+
+/* Stagger Delays */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* --------------------------------------------------------------------------
+ 3. GENTLE HOVER & 3D FLOATING ANIMATIONS
+ -------------------------------------------------------------------------- */
+.float-gentle {
+ animation: floatMascot 5s infinite ease-in-out;
+}
+
+@keyframes floatMascot {
+ 0%, 100% {
+ transform: translateY(0px) rotate(0deg);
+ }
+ 50% {
+ transform: translateY(-10px) rotate(1.5deg);
+ }
+}
+
+.pulse-glow {
+ animation: pulseAura 3s infinite ease-in-out;
+}
+
+@keyframes pulseAura {
+ 0%, 100% {
+ box-shadow: 0 4px 14px rgba(250, 114, 104, 0.25);
+ }
+ 50% {
+ box-shadow: 0 8px 28px rgba(250, 114, 104, 0.55);
+ }
+}
+
+/* Fade in for tab panels */
+@keyframes fadeIn {
+ from {
+ opacity: 0;
+ transform: translateY(10px);
+ }
+ to {
+ opacity: 1;
+ transform: translateY(0);
+ }
+}
+
+/* --------------------------------------------------------------------------
+   4. KINETIC HEADLINE ANIMATIONS (Our Expertise. Your Comfort.)
+   -------------------------------------------------------------------------- */
+.hero-kinetic-wrapper {
+  display: block;
+  margin-top: 4px;
+}
+
+.kinetic-line {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.kinetic-line-1 {
+  animation: kineticReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.kinetic-line-2 {
+  animation: kineticReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.kinetic-line-3 {
+  animation: kineticReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.kinetic-accent {
+  display: inline-block;
+  position: relative;
+  font-weight: 800;
+}
+
+.kinetic-coral {
+  color: var(--coral-500);
+  background: linear-gradient(135deg, #FA7268 0%, #FF8F87 50%, #FA7268 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s ease infinite;
+}
+
+.kinetic-gradient {
+  color: var(--coral-500);
+  background: linear-gradient(135deg, #FA7268 0%, #E25B51 35%, #563356 80%, #FA7268 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease infinite alternate;
+}
+
+.kinetic-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, rgba(250, 114, 104, 0.8), rgba(255, 143, 135, 0.4), transparent);
+  transform-origin: left;
+  animation: expandUnderline 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards, pulseGlowBar 3s infinite 2.1s;
+  transform: scaleX(0);
+}
+
+@keyframes kineticReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes expandUnderline {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulseGlowBar {
+  0%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 2px rgba(250, 114, 104, 0.4));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(250, 114, 104, 0.8));
+  }
+}
+
+/* --------------------------------------------------------------------------
+ 5. REDUCED MOTION PREFERENCE (A11y Rule from AGENTS.md)
+ -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+ *, *::before, *::after {
+ animation-duration: 0.01ms !important;
+ animation-iteration-count: 1 !important;
+ transition-duration: 0.01ms !important;
+ scroll-behavior: auto !important;
+ }
+ 
+ .cursive-welcome-text,
+ .cursive-welcome-badge::after,
+ .animate-on-scroll {
+ animation: none !important;
+ transform: none !important;
+ opacity: 1 !important;
+ filter: none !important;
+ }
+}

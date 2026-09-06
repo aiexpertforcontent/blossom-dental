@@ -1,0 +1,171 @@
+﻿/* ==========================================================================
+   BLOSSOM DENTAL & IMPLANT STUDIO - BASE STYLES & RESET
+   Strictly Non-Sans-Serif (Modern Editorial Serif & Cursive Accents)
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-serif-body);
+  background-color: var(--bg-blush);
+  color: var(--text-body);
+  line-height: var(--lh-normal);
+  font-size: var(--fs-base);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Headings: Strict Modern Editorial Serif */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif-display);
+  color: var(--text-heading-dark);
+  line-height: var(--lh-tight);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: var(--fs-hero);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-serif-body);
+  color: var(--text-muted);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--coral-500);
+  text-decoration: none;
+  font-family: var(--font-serif-body);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--coral-600);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font-family: var(--font-serif-body);
+  font-size: var(--fs-base);
+  color: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: 3px solid var(--coral-500);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Skip Navigation Link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 20px;
+  background: var(--plum-800);
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 9999;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 15px;
+}
+
+/* Section Header Utility */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-12);
+}
+
+.section-header .section-eyebrow {
+  font-family: var(--font-cursive-welcome);
+  font-size: var(--fs-xl);
+  color: var(--coral-500);
+  margin-bottom: var(--space-2);
+  display: inline-block;
+  font-weight: 700;
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-3);
+}
+
+.section-header p {
+  font-size: var(--fs-md);
+  color: var(--text-muted);
+}
